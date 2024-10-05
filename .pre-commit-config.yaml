@@ -1,18 +1,45 @@
 repos:
-  - repo: https://github.com/gruntwork-io/pre-commit
-    rev: "v0.1.23" # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
+  # - repo: https://github.com/vmnomad/pre-commit
+  #   rev: "v0.0.2" # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
+  #   hooks:
+  #     - id: terraform-validate # It should be the first step as it runs terraform init required by tflint
+  #     - id: terraform-fmt
+  #       args: ["-diff"]
+  #       additional_dependencies: []
+  #       stages: [pre-commit]
+  #       always_run: true
+  #       pass_filenames: false
+  #       hooks:
+  #         - name: Stage changes after modification
+  #           run: git add .
+  #     - id: tflint
+  #       args:
+  #         - "--config=.tflint.hcl"
+
+  - repo: local
     hooks:
-      - id: terraform-validate # It should be the first step as it runs terraform init required by tflint
-      # - id: terraform-fmt
-      # - id: tflint
-        args:
-          - "--config=__GIT_ROOT__/.tflint.hcl"
+      - id: terraform-fmt
+        name: terraform fmt
+        entry: terraform fmt -recursive
+        language: system
+        types: [terraform]
+        pass_filenames: false
+
 
   - repo: https://github.com/terraform-docs/terraform-docs
     rev: "v0.19.0" # Get the latest from: https://github.com/terraform-docs/terraform-docs/releases
     hooks:
       - id: terraform-docs-go
         args: ["markdown", "table", ".", "--output-file", "README.md"]
+
+
+  - repo: local
+    hooks:
+      - id: auto-add
+        name: Auto-add updated files
+        entry: bash -c 'git ls-files --modified | grep ".tf$" | xargs git add'
+        language: system
+        pass_filenames: false
 
   # - repo: https://github.com/bridgecrewio/checkov.git
   #   rev: "3.2.216" # Get the latest from: https://github.com/bridgecrewio/checkov/releases
