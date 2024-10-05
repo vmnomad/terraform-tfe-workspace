@@ -1,5 +1,5 @@
 terraform {
-  required_version = "1.9.0"
+  required_version = "1.9.6"
 
   required_providers {
     tfe = {
@@ -17,7 +17,7 @@ terraform {
 }
 
 module "workspace" {
-  source = "../modules/terraform-tfe-workspace"
+  source = "../.."
 
   organization      = "clearroute"
   tenant_name       = "cba"
