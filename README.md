@@ -27,6 +27,7 @@ CLEARROUTE TERRAFORM MODULE
 
 | Name | Description |
 |------|-------------|
+| <a name="output_description"></a> [description](#output\_description) | The project ID the TFE workspace belongs to |
 | <a name="output_id"></a> [id](#output\_id) | Terraform Workspace ID |
 | <a name="output_project_id"></a> [project\_id](#output\_project\_id) | The project ID the TFE workspace belongs to |
 
