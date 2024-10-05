@@ -6,4 +6,5 @@ resource "tfe_workspace" "this" {
   structured_run_output_enabled = false
   working_directory             = var.working_directory
   terraform_version             = var.terraform_version
+
 }
