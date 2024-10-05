@@ -1,33 +1,33 @@
 variable "organization" {
-    description = "Name of the TFE organization"
-    type = string
+  description = "Name of the TFE organization"
+  type        = string
 }
 
 variable "project_id" {
-    description = "the id of the TFE project."
-    type = string
-    default = null
+  description = "the id of the TFE project."
+  type        = string
+  default     = null
 }
 
 variable "tenant_name" {
-    description = "The tenant's name."
-    type = string
+  description = "The tenant's name."
+  type        = string
 }
 
 variable "workspace_name" {
-    description = "Workspace name"
-    type = string
+  description = "Workspace name"
+  type        = string
 }
 
 variable "working_directory" {
   description = "(Optional) A relative path that Terraform will execute within. Defaults to the root of your repository."
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 
 variable "terraform_version" {
-    description = "(Optional) The version of Terraform to use for this workspace. This can be either an exact version or a version constraint (like ~> 1.0.0); if you specify a constraint, the workspace will always use the newest release that meets that constraint. Defaults to the latest available version."
-    type = string
+  description = "(Optional) The version of Terraform to use for this workspace. This can be either an exact version or a version constraint (like ~> 1.0.0); if you specify a constraint, the workspace will always use the newest release that meets that constraint. Defaults to the latest available version."
+  type        = string
 }
 
 variable "tag_names" {

@@ -17,12 +17,12 @@ terraform {
 }
 
 module "workspace" {
-  source = "../modules/terraform-tfe-workspace"  
-  
-  organization   = "clearroute"
-  tenant_name      = "cba"
-  workspace_name   = "devops"
+  source = "../modules/terraform-tfe-workspace"
+
+  organization      = "clearroute"
+  tenant_name       = "cba"
+  workspace_name    = "devops"
   working_directory = "application/foo"
   terraform_version = "1.9.1"
-  tag_names        = ["prod", "tenant"]
+  tag_names         = ["prod", "tenant"]
 }
