@@ -33,13 +33,13 @@ repos:
         args: ["markdown", "table", ".", "--output-file", "README.md"]
 
 
-  - repo: local
-    hooks:
-      - id: auto-add
-        name: Auto-add updated files
-        entry: bash -c 'git ls-files --modified | grep -E "\.tf$|README\.md" | xargs git add'
-        language: system
-        pass_filenames: false
+  # - repo: local
+  #   hooks:
+  #     - id: auto-add
+  #       name: Auto-add updated files
+  #       entry: bash -c 'git ls-files --modified | grep -E "\.tf$|README\.md" | xargs git add'
+  #       language: system
+  #       pass_filenames: false
 
   # - repo: https://github.com/bridgecrewio/checkov.git
   #   rev: "3.2.216" # Get the latest from: https://github.com/bridgecrewio/checkov/releases
