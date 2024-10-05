@@ -9,7 +9,7 @@ CLEARROUTE TERRAFORM MODULE
 
 | Name | Version |
 |------|---------|
-| <a name="provider_tfe"></a> [tfe](#provider\_tfe) | ~> 0.58.0 |
+| <a name="provider_tfe"></a> [tfe](#provider\_tfe) | 0.58.1 |
 
 ## Inputs
 
